@@ -1,28 +1,13 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Rails application is used to provide temperature and humidity logging as API from Raspberry Pi equipped with DHT22 (AM2302) temperature sensor.
 
-Things you may want to cover:
+Things you need:
 
-* Ruby version
+* Raspberry Pi
 
-* System dependencies
+* DHT22 sensor connected to GPIO pin 4
 
-* Configuration
+* Postgres
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Installed bcm2835 lib from: http://www.airspayce.com/mikem/bcm2835
