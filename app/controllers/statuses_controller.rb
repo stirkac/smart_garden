@@ -1,3 +1,4 @@
+require "dht-sensor-ffi"
 class StatusesController < ApplicationController
   before_action :set_status, only: [:show, :update, :destroy]
 
@@ -6,7 +7,7 @@ class StatusesController < ApplicationController
   def index
     @statuses = Status.all
 
-    render json: @statuses
+    render json: DhtSensor.read(22,4).to_json
   end
 
   # GET /statuses/1
