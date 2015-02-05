@@ -1,9 +1,7 @@
 class Status < ActiveRecord::Base
-
 	def initialize
-		val = StatusLogger.log
-		self[:temperature] = val.temp
-		self[:humidity] = val.humidity
+		current_status = DhtSensorReader.get_dht_sensor_reading
+		self[:temperature] = current_status['temperature']
+		self[:humidity] = current_status['humidity']
 	end
-
 end
