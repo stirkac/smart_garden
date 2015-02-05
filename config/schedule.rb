@@ -7,9 +7,14 @@
 #
 # set :output, "/path/to/my/cron_log.log"
 #
- every 1.minutes do
-   runner "Status.make_reading"
- end
+every 1.minute do
+  runner "Status.make_reading"
+end
+
+every :reboot do
+	command "rvmsudo rails s -b 0.0.0.0 -p 1620"
+end
+
 #
 # every 4.days do
 #   runner "AnotherModel.prune_old_records"
