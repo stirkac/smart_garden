@@ -3,7 +3,7 @@ class Status < ActiveRecord::Base
   validates_presence_of :temperature
   validates_presence_of :humidity
 
-  scope :last_day, ->(){ where("datetime(created_at) > datetime('now', '-1 day')") }
+  scope :last_day, ->(){ where(updated_at: (Time.now - 24.hours)..Time.now) }
 
 	def make_reading
 		current_status = DhtSensorReader.get_dht_sensor_reading Rails.root
