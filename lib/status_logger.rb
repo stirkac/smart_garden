@@ -1,7 +1,5 @@
-require "dht-sensor-ffi"
-
-class StatusLogger
-	def log
-		val = DhtSensor.read(4, 22)
+class GetStatus
+	def get_status
+		value = %x( rvmsudo ruby status.rb )
 	end
 end
