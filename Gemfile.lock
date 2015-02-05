@@ -38,6 +38,7 @@ GEM
       tzinfo (~> 1.1)
     arel (6.0.0)
     builder (3.2.2)
+    chronic (0.10.2)
     dht-sensor-ffi (0.1.4)
       ffi (~> 1.9)
     erubis (2.7.0)
@@ -104,6 +105,8 @@ GEM
     tilt (1.4.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    whenever (0.9.4)
+      chronic (>= 0.6.3)
 
 PLATFORMS
   ruby
@@ -114,3 +117,4 @@ DEPENDENCIES
   rails (= 4.2.0)
   rails-api
   spring
+  whenever
