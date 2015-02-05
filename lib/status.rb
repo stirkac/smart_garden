@@ -1,4 +1,5 @@
-require "dht-sensor-ffi"
+require 'dht-sensor-ffi'
+require 'json'
 val = DhtSensor.read(4, 22)
 puts '---data---'
-puts '{ "temperature": '+val.temp+', "humidity": '+val.humidity+'}'
+puts val.to_json
