@@ -38,9 +38,6 @@ GEM
       tzinfo (~> 1.1)
     arel (6.0.0)
     builder (3.2.2)
-    clockwork (1.1.0)
-      activesupport
-      tzinfo
     dht-sensor-ffi (0.1.4)
       ffi (~> 1.9)
     erubis (2.7.0)
@@ -112,7 +109,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  clockwork
   dht-sensor-ffi
   pg
   rails (= 4.2.0)
