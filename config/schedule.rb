@@ -8,7 +8,7 @@
 # set :output, "/path/to/my/cron_log.log"
 #
  every 1.minutes do
-   runner "Status.initialize"
+   runner "Status.make_reading"
  end
 #
 # every 4.days do
