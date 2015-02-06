@@ -9,7 +9,7 @@
 #
 every 3.minutes do
 	set :output, "/Users/home/rubylogs/pi.log"
-  runner "Status.make_reading"
+  runner "Status.make_reading", :environment => 'development'
 end
 
 every :reboot do
