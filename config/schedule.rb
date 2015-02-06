@@ -8,7 +8,7 @@
 # set :output, "/path/to/my/cron_log.log"
 #
 set :environment, :development
-set :output, 'tmp/whenever.log'
+set :output, '/home/pi/whenever.log'
 env :PATH, ENV['PATH']
 
 every 3.minutes do
