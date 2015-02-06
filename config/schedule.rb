@@ -12,7 +12,7 @@ every 1.minute do
 end
 
 every :reboot do
-	command "rvmsudo rails s -b 0.0.0.0 -p 1620"
+	command "rvmsudo rails s -b 0.0.0.0 -p 80"
 end
 
 #
