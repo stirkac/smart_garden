@@ -7,13 +7,14 @@
 #
 # set :output, "/path/to/my/cron_log.log"
 #
+set :environment, :development
+set :output, 'tmp/whenever.log'
+
 every 3.minutes do
-	set :output, "/Users/home/rubylogs/pi.log"
-  runner "Status.make_reading", :environment => 'development'
+  runner "Status.make_reading"
 end
 
 every :reboot do
-	set :output, "/Users/home/rubylogs/pi.log"
 	command "cd /home/pi/Projects/smart_garden && rvmsudo rails s -b 0.0.0.0 -p 80"
 end
 
