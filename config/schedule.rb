@@ -9,10 +9,10 @@
 #
 set :environment, :development
 set :output, '/home/pi/whenever.log'
-env :PATH, ENV['PATH']
+env :GEM_PATH, ENV['GEM_PATH']
 
 every 3.minutes do
-  runner "Status.make_reading"
+  runner "Status.new.make_reading"
 end
 
 every :reboot do
