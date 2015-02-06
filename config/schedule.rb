@@ -16,7 +16,7 @@ every 3.minutes do
 end
 
 every :reboot do
-	command "cd /home/pi/Projects/smart_garden && rvmsudo rails s -b 0.0.0.0 -p 80"
+	command "cd /home/pi/Projects/smart_garden && rvmsudo rails s -b 0.0.0.0 -p 80 -e production"
 end
 
 #
