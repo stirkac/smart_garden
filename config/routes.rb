@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :statuses, only: [:index] do
-    get "/current", controller: :statuses, action: :current
+    collection do
+      get "/current", controller: :statuses, action: :current
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
