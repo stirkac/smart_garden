@@ -9,6 +9,7 @@
 #
 set :environment, :development
 set :output, 'tmp/whenever.log'
+env :PATH, ENV['PATH']
 
 every 3.minutes do
   runner "Status.make_reading"
