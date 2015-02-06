@@ -7,12 +7,14 @@
 #
 # set :output, "/path/to/my/cron_log.log"
 #
-every 1.minute do
+every 3.minutes do
+	set :output, "/Users/home/rubylogs/pi.log"
   runner "Status.make_reading"
 end
 
 every :reboot do
-	command "rvmsudo rails s -b 0.0.0.0 -p 80"
+	set :output, "/Users/home/rubylogs/pi.log"
+	command "cd /home/pi/Projects/smart_garden && rvmsudo rails s -b 0.0.0.0 -p 80"
 end
 
 #
