@@ -7,6 +7,7 @@ gem 'spring', :group => :development
 gem 'pg'
 gem 'dht-sensor-ffi'
 gem 'whenever', :require => false
+gem 'thin'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
