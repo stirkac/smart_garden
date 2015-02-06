@@ -7,7 +7,7 @@
 #
 # set :output, "/path/to/my/cron_log.log"
 #
-set :environment, :development
+set :environment, :production
 set :output, '/home/pi/whenever.log'
 env :GEM_PATH, ENV['GEM_PATH']
 
