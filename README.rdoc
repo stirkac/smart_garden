@@ -11,3 +11,7 @@ Things you need:
 * Postgres
 
 * Installed bcm2835 lib from: http://www.airspayce.com/mikem/bcm2835
+
+After rails setup you need to run:
+
+* "whenever --update-crontab"
