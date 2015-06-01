@@ -11,7 +11,7 @@ class Status < ActiveRecord::Base
 		delta_t = last_status.temperature - current_status['temperature'].to_f rescue 1
 		delta_h = last_status.humidity - current_status['humidity'].to_f rescue 1
 
-		if(delta_t.abs > 0.5 || delta_h.abs > 1)
+		if (delta_t.abs > 0.5 || delta_h.abs > 1) && delta_h.abs < 10 && delta_t.abs < 10
 			self[:temperature] = current_status['temperature']
 			self[:humidity] = current_status['humidity']
 			self.save!
