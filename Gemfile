@@ -3,9 +3,9 @@ ruby '2.2.0'
 
 gem 'rails', '4.2.0'
 gem 'rails-api'
-gem 'spring', :group => :development
+gem 'spring', group: :development
 gem 'pg'
-gem 'dht-sensor-ffi'
+gem 'dht-sensor-ffi', group: :production, :require => false
 gem 'whenever', :require => false
 
 # To use ActiveModel has_secure_password
