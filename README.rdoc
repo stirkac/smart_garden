@@ -8,10 +8,30 @@ Things you need:
 
 * DHT22 sensor connected to GPIO pin 4
 
-* Postgres
+* Debian and Ruby on Rails installed on SD card
+
+* PostgreSQL
 
 * Installed bcm2835 lib from: http://www.airspayce.com/mikem/bcm2835
 
-After rails setup you need to run:
+Usage:
 
-* "whenever --update-crontab"
+* "git clone" this repository in /home/pi/Projects/ or any other directory (but change config/schedule.rb accordingly)
+
+* run "bundle install" to install gems
+
+* run "whenever --update-crontab" to set up cron jobs
+
+* run "rake db:create db:migrate" to set up database
+
+* reboot Raspberry Pi
+
+* Current status from sensor should be available, check "http://yourIP/current" and "http://yourIP/statuses"
+
+If you are not a computer:
+
+* visit http://smart-garden-client.herokuapp.com and use graphical interface
+
+Future plans:
+
+* make whole app as an image to put directly on RasperryPi's SD
