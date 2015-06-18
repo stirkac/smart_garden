@@ -1,6 +1,6 @@
 == README
 
-This Rails application is used to provide temperature and humidity logging as API from Raspberry Pi equipped with DHT22 (AM2302) temperature sensor.
+This Rails application is used to provide temperature and humidity logging as JSON API from Raspberry Pi equipped with DHT22 (AM2302) temperature sensor.
 
 Things you need:
 
@@ -14,7 +14,7 @@ Things you need:
 
 * Installed bcm2835 lib from: http://www.airspayce.com/mikem/bcm2835
 
-Usage:
+Setup (on your Raspberry PI):
 
 * "git clone" this repository in /home/pi/Projects/ or any other directory (but change config/schedule.rb accordingly)
 
@@ -26,12 +26,19 @@ Usage:
 
 * reboot Raspberry Pi
 
-* Current status from sensor should be available, check "http://yourIP/current" and "http://yourIP/statuses"
+Usage:
+
+Current status from sensor should be available, check http://your.raspberry.IP/current and http://your.raspberry.IP/statuses
+
+Sensor readings will be saved to database automatically via Crontab jobs every 3 minutes (if readings have changed). 
+Application is started on every boot, so after setup you can leave an forget about it :) 
 
 If you are not a computer:
 
-* visit http://smart-garden-client.herokuapp.com and use graphical interface
+* visit http://smart-garden-client.herokuapp.com and use graphical interface, just put in sensor location.
 
 Future plans:
 
-* make whole app as an image to put directly on RasperryPi's SD
+* make whole app as an image to put directly on RasperryPi's SD (zero setup)
+
+* handle dynamic IP's with dynamic dns service
