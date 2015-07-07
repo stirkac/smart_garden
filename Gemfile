@@ -5,6 +5,8 @@ gem 'rails', '4.2.0'
 gem 'rails-api'
 gem 'spring', group: :development
 gem 'pg'
+gem 'httparty'
+gem 'dotenv-rails'
 gem 'dht-sensor-ffi', group: :production, :require => false
 gem 'whenever', :require => false
 

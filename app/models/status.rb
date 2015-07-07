@@ -9,16 +9,15 @@ class Status < ActiveRecord::Base
 		current_status = get_data
 		self[:temperature] = current_status.temperature
 		self[:humidity] = current_status.humidity
+		self.should_save? ? self.save : false
+	end
+
+	def should_save?
+		# we must save first record
 		if Status.all.count < 1
-			self.save!
+			return true
 		else
-			last_status = Status.order(:created_at).last
-			delta_t = last_status.temperature - current_status.temperature
-			delta_h = last_status.humidity - current_status.humidity
-			# saving only what is worth saving
-			if (delta_t.abs > 0.5 || delta_h.abs > 1) && delta_h.abs < 10 && delta_t.abs < 10
-				self.save!
-			end
+			return check_limits
 		end
 	end
 
@@ -30,6 +29,17 @@ class Status < ActiveRecord::Base
   	else
   		return Status.new(temperature: Random.new.rand(30) , humidity: Random.new.rand(100))
   	end
+	end
+
+	def check_limits
+		last_status = Status.order(:created_at).last
+		delta_t = last_status.temperature - self[:temperature]
+		delta_h = last_status.humidity - self[:humidity]
+		if (delta_t.abs > 0.5 || delta_h.abs > 1) && delta_h.abs < 10 && delta_t.abs < 10
+			return true
+		else
+			return false
+		end
 	end
 
 end
