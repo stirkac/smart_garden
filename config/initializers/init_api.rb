@@ -10,6 +10,6 @@ SmartGarden::Application.config.after_initialize do
 		end
 		puts response
 	rescue
-		puts "local: fail: Something went wrong! Make sure internet connection is available"
+		puts "local: fail: Connecting to #{address} unsuccessful! Make sure internet connection is available!"
 	end
 end
